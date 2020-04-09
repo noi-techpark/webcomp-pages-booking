@@ -1,0 +1,31 @@
+{
+  "title": "webcomp-pages-booking",
+  "description": "Booking widget used for searching and book apartments and rooms.",
+  "descriptionAbstract": "Booking widget",
+  "license": "AGPL-3.0",
+  "repositoryUrl": "https://github.com/noi-techpark/webcomp-pages-booking",
+  "authors": [
+    {
+      "name": "NOI",
+      "email": "info@noi.bz.it",
+      "organization": "NOI S.p.A",
+      "organizationUrl": "https://noi.bz.it"
+    },
+    {
+      "name": "Daniel Rampanelli",
+      "email": "hello@danielrampanelli.com"
+    }
+  ],
+  "image": null,
+  "searchTags": ["pages", "booking"],
+  "dist": {
+    "basePath": "dist",
+    "files": [
+      "pages-booking.min.js"
+    ]
+  },
+  "configuration": {
+    "tagName": "pages-booking",
+    "options": []
+  }
+}
