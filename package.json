@@ -1,0 +1,37 @@
+{
+  "dependencies": {
+    "lit-element": "^2.2.0",
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "@glidejs/glide": "^3.4.1",
+    "@open-wc/building-webpack": "^2.3.1",
+    "@open-wc/polyfills-loader": "^0.3.2",
+    "autoprefixer": "^9.7.4",
+    "bourbon": "^6.0.0",
+    "breakpoint-sass": "^2.7.1",
+    "css-loader": "^3.2.0",
+    "file-loader": "^5.1.0",
+    "image-preload": "^1.0.6",
+    "jquery": "^3.4.1",
+    "marked": "^0.8.0",
+    "moment": "^2.24.0",
+    "node-sass": "^4.13.1",
+    "normalize.css": "^8.0.1",
+    "pikaday": "^1.8.0",
+    "postcss-loader": "^3.0.0",
+    "sanitize-html": "^1.22.0",
+    "sass-loader": "^8.0.2",
+    "slick-carousel": "^1.8.1",
+    "svg-inline-loader": "^0.8.0",
+    "url-loader": "^2.3.0",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2",
+    "webpack-merge": "^4.2.1"
+  },
+  "scripts": {
+    "build": "webpack --mode production --config webpack.config.js",
+    "watch": "webpack-dev-server --mode development --config webpack.config.js"
+  }
+}

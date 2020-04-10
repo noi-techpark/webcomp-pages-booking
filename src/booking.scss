@@ -1,0 +1,312 @@
+@import 'bourbon';
+@import '~breakpoint-sass/stylesheets/breakpoint.scss';
+@import '~pikaday/scss/pikaday.scss';
+
+$orange: #DE7000;
+
+#container {
+  bottom: -100px;
+  left: 0;
+  opacity: 0.0;
+  position: fixed;
+  right: 0;
+  transition: all .5s ease-in-out;
+  width: 100%;
+  z-index: 9000;
+
+  nav {
+    background-color: #ffffff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 1px 2px 24px rgba(0, 0, 0, .4);
+    box-sizing: border-box;
+    display: block;
+    height: 72px;
+    margin: 0 auto;
+    padding: 16px;
+    transition: all .25s ease-in-out;
+    width: 100%;
+
+    form {
+      display: flex;
+      margin: 0 auto;
+      max-width: 1240px;
+
+      #contains-from-date, #contains-to-date {
+        box-sizing: border-box;
+        flex: 1 1 0;
+        margin-right: 8px;
+        position: relative;
+        width: 100%;
+
+        @include breakpoint(480px) {
+          margin-right: 12px;
+        }
+
+        label {
+          color: #758592;
+          display: none;
+          font-family: 'pages-kievit', sans-serif;
+          font-size: 14px;
+          height: 14px;
+          left: 16px;
+          pointer-events: none;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          user-select: none;
+
+          @include breakpoint(768px) {
+            font-size: 18px;
+          }
+        }
+
+        svg {
+          display: none;
+          height: 20px;
+          margin-top: -10px;
+          pointer-events: none;
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          user-select: none;
+          width: 20px;
+
+          @include breakpoint(480px) {
+            display: inline-block;
+          }
+
+          @include breakpoint(768px) {
+            height: 24px;
+            margin-top: -12px;
+            right: 12px;
+            width: 24px;
+          }
+        }
+      }
+
+      #from-date, #to-date {
+        background-color: #f7f8f8;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        box-sizing: border-box;
+        color: #000000;
+        cursor: pointer;
+        font-family: 'pages-suedtirol-next', sans-serif;
+        font-size: 14px;
+        height: 40px;
+        padding: 8px;
+        text-align: center;
+        width: 100%;
+
+        @include breakpoint(480px) {
+          padding: 12px 20px;
+          text-align: left;
+        }
+
+        @include breakpoint(768px) {
+          font-size: 18px;
+        }
+      }
+
+      #submit {
+        appearance: none;
+        background-color: $orange;
+        border: 0;
+        border-radius: 5px;
+        color: #ffffff;
+        cursor: pointer;
+        flex: 1 1 0;
+        font-family: 'pages-kievit', sans-serif;
+        font-size: 14px;
+        height: 40px;
+
+        @include breakpoint(768px) {
+          font-size: 18px;
+        }
+      }
+
+      @include breakpoint(992px) {
+        #contains-from-date, #contains-to-date {
+          label {
+            display: inline-block;
+          }
+        }
+
+        #from-date, #to-date {
+          padding: 12px 20px 12px 130px;
+        }
+      }
+    }
+
+    @include breakpoint(992px) {
+      height: 96px;
+      padding: 16px;
+
+      form {
+        #contains-from-date, #contains-to-date {
+          label {
+            top: 12px;
+            transform: none;
+          }
+        }
+
+        #from-date, #to-date, #submit {
+          height: 64px;
+        }
+
+        #from-date, #to-date {
+          padding: 24px 16px 0 16px;
+        }
+      }
+    }
+  }
+
+  &.has-left-the-beginning {
+    bottom: 0;
+    opacity: 1.0;
+  }
+
+  &.has-reached-the-end {
+    nav {
+      width: 100%;
+    }
+  }
+
+  @include breakpoint(992px) {
+    nav {
+      width: 720px;
+    }
+
+    &.has-reached-the-end {
+      nav {
+        height: 82px;
+
+        form {
+          #contains-from-date, #contains-to-date {
+            label {
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+
+          #from-date, #to-date, #submit {
+            height: 50px;
+          }
+
+          #from-date, #to-date {
+            padding: 12px 20px 12px 130px;
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoint(1240px) {
+    nav {
+      height: 82px;
+      width: 860px;
+
+      form {
+        #contains-from-date, #contains-to-date {
+          label {
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+
+        #from-date, #to-date, #submit {
+          height: 50px;
+        }
+
+        #from-date, #to-date {
+          padding: 12px 20px 12px 130px;
+        }
+      }
+    }
+
+    &.has-reached-the-end {
+      nav {
+        height: 82px;
+
+        form {
+          #from-date, #to-date, #submit {
+            height: 50px;
+          }
+
+          #from-date, #to-date {
+            padding: 12px 20px 12px 130px;
+          }
+        }
+      }
+    }
+  }
+
+  .pika-single {
+    border-radius: 5px;
+    display: inline-block;
+    font-family: 'pages-kievit', sans-serif;
+    font-size: 14px;
+    left: 0 !important;
+    position: absolute !important;
+    top: -8px !important;
+    transform: translateY(-100%);
+
+    &.is-hidden {
+      display: none;
+    }
+
+    .pika-lendar {
+      width: 250px;
+    }
+
+    .pika-table th {
+      font-family: 'pages-kievit', sans-serif;
+      font-size: 14px;
+
+      abbr {
+        display: inline-block;
+        line-height: 36px;
+        height: 36px;
+        width: 36px;
+      }
+    }
+
+    .pika-day {
+      padding: 10px;
+
+      &:hover {
+        background-color: lighten($orange, 25%);
+      }
+    }
+
+    .pika-button {
+      font-family: 'pages-kievit', sans-serif;
+      font-size: 14px;
+    }
+
+    .is-today {
+      .pika-button {
+        color: $orange;
+      }
+    }
+
+    .is-startrange, .is-endrange {
+      .pika-button {
+        background-color: $orange;
+        color: #ffffff;
+      }
+    }
+
+    .is-inrange {
+      .pika-button {
+        background-color: lighten($orange, 50%);
+
+        &:hover {
+          background-color: lighten($orange, 25%);
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
