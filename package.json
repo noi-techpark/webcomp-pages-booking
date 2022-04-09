@@ -15,7 +15,7 @@
     "image-preload": "^1.0.6",
     "jquery": "^3.4.1",
     "marked": "^0.8.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "node-sass": "^4.13.1",
     "normalize.css": "^8.0.1",
     "pikaday": "^1.8.0",
